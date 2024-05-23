@@ -19,6 +19,6 @@ mongoose.connect(MONGO_URI)
         app.listen(PORT, () => {console.log("Servidor express corriendo en el puerto: "+PORT)})
     }
 ).catch( error => console.log('error de conexion', error));
-
+//
 //utilizar las rutas de recetas
 app.use('/recetarios', recetaRutas);
