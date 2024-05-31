@@ -47,7 +47,7 @@ rutas.delete('/eliminar/:id',async (req, res) => {
     try {
        const recetaEliminada = await RecetaModel.findByIdAndDelete(req.params.id);
        if (!recetaEliminada)
-            return res.status(404).json({ mensaje : 'Receta no encontrada!!!'});
+            return res.status(404).json({ mensaje : 'Receta no encontrada!'});
        else 
             return res.json({mensaje :  'Receta eliminada'});    
        } 
@@ -60,7 +60,7 @@ rutas.get('/receta/:id', async (req, res) => {
     try {
         const receta = await RecetaModel.findById(req.params.id);
         if (!receta)
-            return res.status(404).json({ mensaje : 'Receta no encontrada!!!'});
+            return res.status(404).json({ mensaje : 'Receta no encontrada!'});
         else 
             return res.json(receta);
     } catch(error) {
@@ -115,7 +115,7 @@ rutas.get('/recetaPorCantidad/:cantidad', async (req, res) => {
 });
 
 //endpoint 6 - obtener recetas por un ingrediente especifico
-rutas.get('/norbertoQuispe/:ingrediente', async (req, res) => {
+rutas.get('/ingredienteespecifico/:ingrediente', async (req, res) => {
     try {
         const recetaIngrediente = await RecetaModel.find({ ingredientes: new RegExp(req.params.ingrediente, 'i')});
         return res.json(recetaIngrediente);

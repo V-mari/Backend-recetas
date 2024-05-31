@@ -16,9 +16,9 @@ const MONGO_URI = process.env.MONGO_URI;
 app.use(express.json());
 
 //CONEXION CON MONGODB\
-mongoose.connect(MONGO_URI)
+mongoose . connect (MONGO_URI)
 .then(() => {
-        console.log('Conexion exitosa');
+        console.log('Conexion exitosa con MongoDB');
         app.listen(PORT, () => {console.log("Servidor express corriendo en el puerto: "+PORT)})
     }
 ).catch( error => console.log('error de conexion', error));

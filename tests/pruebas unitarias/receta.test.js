@@ -6,6 +6,7 @@ const mongoose  = require('mongoose');
 const app = express();
 app.use(express.json());
 app.use('/recetarios', recetaRutas);
+app.use('/usuario', authRutas);
 
 describe('Pruebas Unitarias para Recetas', () => {
     //se ejecuta antes de iniciar las pruebas
@@ -34,7 +35,7 @@ describe('Pruebas Unitarias para Recetas', () => {
     test('Deberia agregar una nueva Receta: POST: /crear', async() => {
         const nuevaReceta = {
             nombre: 'Torta Helada', 
-            ingredientes: 'huevo, harina, crema de leche, leche, azucar', 
+            ingredientes: 'huevo, harina, crema de leche, leche, azu', 
             porciones: 10 
         };
         const res =  await request(app)
